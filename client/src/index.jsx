@@ -37,8 +37,6 @@ class App extends React.Component {
 
   }
   
-
-  
   search (term) {
     console.log(`${term} was searched`);
     // this.setState({ 
@@ -67,7 +65,7 @@ class App extends React.Component {
     return (<div>
       <h1>Github Fetcher</h1>
       <RepoList repos={this.state.repos}/>
-      <Data data={this.state.repos.slice(0,25)} />
+      <Data data={this.state.repos} />
       <Search onSearch={this.search.bind(this)}/>
     </div>)
   }

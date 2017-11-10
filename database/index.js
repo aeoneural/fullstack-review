@@ -6,7 +6,7 @@ console.log("This is database/index.js 2")
 
 let repoSchema = mongoose.Schema({
   // TODO: your schema here!
-  id: Number, 
+  id: Number,
   name: String, 
   full_name: String, 
   html_url: String, 
@@ -26,7 +26,7 @@ let save = (document) => {
 
     oneRepo.save(function(err, oneInstance) { 
     if(err) console.log("ERROR DB");
-    console.log('SUCCESS: ', document)
+    // console.log('SUCCESS: ', document)
   })
 }
 
@@ -35,7 +35,7 @@ let fetchdata = (callback) => {
   Repo.find(function (err, repos) {
   if (err) return console.error(err);
   callback(repos);
-})
+}).sort({'id':1}).limit(25);
 
 
 } 
